@@ -1,0 +1,10 @@
+[bundle]
+name = "Mondradiko Example World: Sponza"
+
+[[assets]]
+file = "model/Sponza.gltf"
+type = "gltf"
+
+[[assets]]
+file = "avatar/example-avatar.vrm"
+type = "gltf"

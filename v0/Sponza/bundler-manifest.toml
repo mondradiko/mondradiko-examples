@@ -3,8 +3,8 @@ name = "Mondradiko Example World: Sponza"
 
 [[assets]]
 file = "model/Sponza.gltf"
-type = "gltf"
+initial_prefab = true
 
 [[assets]]
 file = "avatar/example-avatar.vrm"
-type = "gltf"
+initial_prefab = true

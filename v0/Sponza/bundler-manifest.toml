@@ -8,3 +8,17 @@ initial_prefab = true
 [[assets]]
 file = "avatar/example-avatar.vrm"
 initial_prefab = true
+
+[[assets]]
+file = "scripts/test_script.wat"
+alias = "test_script"
+
+[[prefabs]]
+initial_prefab = true
+
+  [prefabs.point_light]
+
+  [prefabs.script]
+  script_asset = "test_script"
+
+  [prefabs.transform]

@@ -10,15 +10,44 @@ file = "avatar/example-avatar.vrm"
 initial_prefab = true
 
 [[assets]]
-file = "scripts/test_script.wat"
+file = "scripts/test_as.wat"
 alias = "test_script"
 
 [[prefabs]]
 initial_prefab = true
 
   [prefabs.point_light]
+  position = [0.0, 1.5, 0.0]
+  intensity = [100.0, 0.0, 100.0]
 
   [prefabs.script]
   script_asset = "test_script"
 
   [prefabs.transform]
+  position = [0.0, 0.0, 0.0]
+
+[[prefabs]]
+initial_prefab = true
+
+  [prefabs.point_light]
+  position = [0.0, 1.5, 0.0]
+  intensity = [0.0, 100.0, 100.0]
+
+  [prefabs.script]
+  script_asset = "test_script"
+
+  [prefabs.transform]
+  position = [-3.0, 0.0, -4.0]
+
+[[prefabs]]
+initial_prefab = true
+
+  [prefabs.point_light]
+  position = [0.0, 1.5, 0.0]
+  intensity = [100.0, 100.0, 0.0]
+
+  [prefabs.script]
+  script_asset = "test_script"
+
+  [prefabs.transform]
+  position = [7.0, 0.0, 3.0]

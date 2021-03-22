@@ -10,7 +10,9 @@ export class SlidingLight {
 
   velocity: f64;
 
-  constructor() {}
+  constructor() {
+    this.velocity = this.speed;
+  }
 
   update(transform: Transform, dt: f64): void {
     let x = transform.getX();

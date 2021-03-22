@@ -1761,6 +1761,10 @@
   local.get $0
   f64.const 0
   f64.store offset=24
+  local.get $0
+  local.get $0
+  f64.load
+  f64.store offset=24
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add

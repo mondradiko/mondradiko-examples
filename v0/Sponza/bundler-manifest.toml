@@ -4,11 +4,13 @@ compression = "LZ4"
 
 [[assets]]
 file = "model/Sponza.gltf"
-initial_prefab = true
+alias = "Sponza"
+initial_prefab = false
 
 [[assets]]
 file = "avatar/example-avatar.vrm"
-initial_prefab = true
+alias = "example-avatar"
+initial_prefab = false
 
 [[assets]]
 file = "scripts/SlidingLight.wat"
@@ -20,6 +22,24 @@ environment = "AssemblyScript"
 
 [[prefabs]]
 initial_prefab = true
+children = ["Sponza"]
+
+[[prefabs]]
+initial_prefab = true
+
+  [prefabs.point_light]
+  position = [0.0, 0.0, 0.0]
+  intensity = [100.0, 100.0, 100.0]
+
+  [prefabs.rigid_body]
+  mass = 10.0
+
+  [prefabs.transform]
+  position = [-5.0, 5.0, 0.0]
+
+[[prefabs]]
+initial_prefab = true
+children = ["example-avatar"]
 
   [prefabs.point_light]
   position = [0.0, 1.5, 0.0]

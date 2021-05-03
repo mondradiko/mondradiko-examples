@@ -1,7 +1,7 @@
 // Compile with:
-// $ asc -t SlidingLight.wat -O3 SlidingLight.ts
+// $ asc -t SlidingLight.wat -O3 --exportRuntime SlidingLight.ts
 
-import Transform from "./components/Transform.d";
+import Entity from "./components/Entity";
 
 export class SlidingLight {
   speed: f64 = 3.0;
@@ -10,11 +10,13 @@ export class SlidingLight {
 
   velocity: f64;
 
-  constructor() {
+  constructor(public entity: Entity) {
     this.velocity = this.speed;
   }
 
-  update(transform: Transform, dt: f64): void {
+  update(dt: f64): void {
+    let transform = this.entity.getTransform();
+
     let x = transform.getX();
     let y = transform.getY();
     let z = transform.getZ();
@@ -31,13 +33,10 @@ export class SlidingLight {
   }
 }
 
-// Dummy update() for now until we have script class instantiation
-let sliding_light = new SlidingLight
+export function instantiate(entity: Entity): SlidingLight {
+  return new SlidingLight(entity);
+}
 
-// self is meant to represent the entity ID,
-// and we can just treat it like a Transform since the core API
-// uses the entity ID as each method's instance reference
-// (passed as i32)
-export function update(self: Transform, dt: f64): void {
-  sliding_light.update(self, dt);
+export function update(self: SlidingLight, dt: f64): void {
+  self.update(dt);
 }
